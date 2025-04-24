@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  hospital_cli:
+    build: .
+    container_name: hospital_management
+    stdin_open: true
+    tty: true
