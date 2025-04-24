@@ -12,7 +12,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Replace with your actual Git repository URL
-                git 'https://your-repo-url.git'
+                git 'https://github.com/Riteek09/hospital-management'
             }
         }
 
