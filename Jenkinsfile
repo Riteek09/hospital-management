@@ -1,17 +1,16 @@
 pipeline {
     agent any
-    
+
     environment {
-        // Optional: Define DockerHub registry credentials
+        // DockerHub registry credentials stored in Jenkins
         DOCKER_CREDENTIALS = 'dockerhub-credentials'
-        IMAGE_NAME = 'hospital_cli_app'
+        IMAGE_NAME = 'ritik1108/hospital_cli_app'  // Use your Docker Hub username here
         IMAGE_TAG = 'latest'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                // Replace with your actual Git repository URL
                 git branch: 'main', url: 'https://github.com/Riteek09/hospital-management'
             }
         }
@@ -42,8 +41,8 @@ pipeline {
             }
             steps {
                 echo "Deploying the image to the production server..."
-                // Example: SSH into your server and deploy
-                // sh 'ssh user@server "docker pull hospital_cli_app:latest && docker run ... "'
+                // Example:
+                // sh 'ssh user@server "docker pull ritik1108/hospital_cli_app:latest && docker run ..."'
             }
         }
     }
